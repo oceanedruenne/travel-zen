@@ -3,11 +3,13 @@ import "../globals.css"
 import Link from "next/link"
 import { OtherPage } from "../components/OtherPage"
 import { CurrentPage } from "../components/CurrentPage"
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 
 export default function FormFour()
 {
+    const router = useRouter();
+
     const idPerson = useSearchParams().get("idPerson");
     let [personData, setPersonData] = useState();
 
@@ -17,6 +19,8 @@ export default function FormFour()
         .then(() => console.log(personData))
         .catch((error) => console.log(error.message))
     }, [idPerson]);
+
+    router.push("/form_five?idPerson="+idPerson);
 
 
     return (
