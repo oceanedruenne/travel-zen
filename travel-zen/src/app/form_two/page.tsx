@@ -97,6 +97,7 @@ export default function FormTwo()
             <CurrentPage number="2." title="Voyage"></CurrentPage>
             <OtherPage number="3." title="Accompagnement"></OtherPage>
             <OtherPage number="4." title="Résumé"></OtherPage>
+            <OtherPage number="5." title="Liste"></OtherPage>
         </div>
         <div className="flex flex-col flex-nowrap justify-center items-center content-stretch mt-8">
             <form className="bg-dark text-white text-s border-4 rounded-md border-white px-6 pt-3 pb-3" onSubmit={validateForm}>

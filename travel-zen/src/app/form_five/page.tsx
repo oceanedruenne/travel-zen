@@ -3,6 +3,7 @@ import "../globals.css"
 import { OtherPage } from "../components/OtherPage"
 import { useState } from "react"
 import { redirect, useSearchParams } from "next/navigation"
+import { CurrentPage } from "../components/CurrentPage"
 
 
 export default function FormFive()
@@ -16,10 +17,13 @@ export default function FormFive()
     return (
         <>
         <div className="flex flex-row flex-nowrap justify-evenly items-baseline content-stretch">
-            <OtherPage number="1." title="Profil"></OtherPage>
-            <OtherPage number="2." title="Voyage"></OtherPage>
-            <OtherPage number="3." title="Accompagnement"></OtherPage>
-            <OtherPage number="4." title="Résumé"></OtherPage>
+        <div className="flex flex-row flex-nowrap justify-evenly items-baseline content-stretch">
+        <OtherPage number="1." title="Profil"></OtherPage>
+        <OtherPage number="2." title="Voyage"></OtherPage>
+        <OtherPage number="3." title="Accompagnement"></OtherPage>
+        <OtherPage number="4." title="Résumé"></OtherPage>
+        <CurrentPage number="5." title="Liste"></CurrentPage>
+      </div>
         </div>
         <div className="flex flex-col flex-nowrap justify-center items-start content-stretch mt-8 text-white">
         <p className="text-m">Votre liste d'affaires pour votre voyage de x jours :</p>
