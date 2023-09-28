@@ -15,21 +15,10 @@ export default function FormFive()
         redirect('/form_one');
     }
 
-    const [personData, setPersonData] = useState();
     const router = useRouter();
     const [travels, setTravels] = useState();
     const [continent, setContinent] = useState();
-    const [accompagnement, setAccompagnement] = useState();
-  
-  
-    useEffect(() => {
-      fetch(`http://localhost:3001/accompagnement/1`)
-        .then(async (data) => {
-          const response = await data.json();
-          setAccompagnement(response);
-        })
-        .catch((error) => console.error(error.message));
-    });
+ 
   
     useEffect(() => {
       fetch(`http://localhost:3001/travel/${idPerson}`)
@@ -40,11 +29,6 @@ export default function FormFive()
         .catch((error) => console.error(error.message));
     }, [idPerson]);
   
-    useEffect(() => {
-      fetch(`http://localhost:3001/profile/${idPerson}`)
-        .then(async (data) => setPersonData(await data.json()))
-        .catch((error) => console.error(error.message));
-    }, [idPerson]);
   
   
     const continentId = travels?.ContinentId;
@@ -184,6 +168,8 @@ export default function FormFive()
                 <div>
                     <label htmlFor="carte">Carte de l'endroit des vacances</label>
                 </div>
+                <p className="text-m mt-6">Vaccins: </p>
+
             </div></>
   );
 }
